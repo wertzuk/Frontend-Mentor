@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Kumbh Sans, sans-serif;
+    background: hsl(185, 75%, 39%);
+    background-image: 
+        url("images/bg-pattern-top.svg"),
+        url("images/bg-pattern-bottom.svg");
+
+    background-repeat: no-repeat;
+    background-position:
+        top -400px left -150px,
+        bottom -400px right -150px;
+  
+    background-attachment: fixed;
+    background-size:contain;
+    font-size: 18px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 350px;
+    height: 380px;
+    position: relative;
+}
+.top-area {
+    height: 38%;
+    background-image: url("images/bg-pattern-card.svg");
+    background-size: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+.profile {
+    position: absolute;
+    border-radius: 50%;
+    left: 125px;
+    top: 90px;
+    border: 6px solid white;
+}
+.main-area {
+    height: 62%;
+    margin: 0;
+    background: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+   
+}
+
+.grey {
+    color: hsl(0, 0%, 59%);
+}
+.name-row {
+    margin: 0;
+    padding-top: 4.6rem;
+    text-align: center;
+}
+.name {
+    font-weight: 900;
+    padding: .4rem;
+    opacity: 0.8;
+}
+.location {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1.7rem;
+    font-size: 14px;
+    text-align: center;
+}
+
+.bottom {
+    border-top: .1px solid hsl(0, 23%, 94%);
+    padding: 1.6rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+
+.stats span {
+    display: block;
+    text-align: center;
+
+}
+
+.count {
+    font-weight: 700;
+    font-size: 18px;
+    opacity: 0.9;
+
+}
+.small{
+    font-size: 12px;  
+    padding-top: 5px;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-position:
+        top -210px left -200px,
+        bottom -250px right -180px;
+    }
+}
