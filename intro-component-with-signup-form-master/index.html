@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="script.js" defer></script>
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="left">
+    <div class="text-container">
+      <h1>Learn to code by watching others</h1>
+      <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="trial top-box">
+      <p><span class="bold">Try it free 7 days</span>
+      <span class="light">then $20/mo. thereafter</span></p>
+    </div>
+    <div class="main-container">
+      <div class="input-row">
+        <input class="input" type="text" name="firstname" id="firstname" placeholder="First Name">
+        <img class="error invisible" src="images/icon-error.svg" alt="">
+        <span class="error-msg msg-1 invisible">First Name cannot be empty</span>
+        <span class="error-msg msg-2 invisible">Looks like this is not a name</span>
+      </div>
+      <div class="input-row">
+        <input class="input" type="text" name="lastname" id="lastname" placeholder="Last Name">
+        <img class="error invisible" src="images/icon-error.svg" alt="">
+        <span class="error-msg msg-1 invisible">Last Name cannot be empty</span>
+        <span class="error-msg msg-2 invisible">Looks like this is not a name</span>
+      </div>
+      <div class="input-row">
+        <input class="input" type="email" name="email" id="email" placeholder="Email Adress">
+        <img class="error invisible" src="images/icon-error.svg" alt="">
+        <span class="error-msg msg-1 invisible">Email cannot be empty</span>
+        <span class="error-msg msg-2 invisible">Looks like this is not an email</span>
+      </div>
+      <div class="input-row">
+        <input class="input" type="password" name="password" id="password" placeholder="Password">
+        <img class="error invisible" src="images/icon-error.svg" alt="">
+        <span class="error-msg msg-1 invisible">Password cannot be empty</span>
+        <span class="error-msg msg-2 invisible"></span>
+      </div>
+
+      <button class="trial submit" type="submit"><span>CLAIM YOUR FREE TRIAL</span> </button>
+      <p class="small">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+    </div>
+  </div>
+</body>
+</html>
