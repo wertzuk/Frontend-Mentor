@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-cyan: hsl(179, 62%, 43%);
+    --clr-bright-yellow: hsl(71, 73%, 54%);
+    --clr-light-grey: hsl(204, 43%, 93%);
+    --clr-greyish-blue: hsl(218, 22%, 67%);
+}
+
+body {
+    margin: 0;
+    background: var(--clr-light-grey);
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.grid-container {
+    margin: 4.5rem 2rem;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 15px 20px 5px rgba(0,0,0, .1);
+
+}
+
+.grid-item {
+    /* border: 1px solid black; */
+    padding: 0 1.5rem;
+    padding-top: 1.7rem;
+}
+
+.section-header {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.header-blue {
+    color: var(--clr-cyan);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.item-1 {
+    background: white;
+}
+
+.item-1 h4 {
+    color: var(--clr-bright-yellow);
+    margin: 0;
+} 
+
+.text-1 {
+    color: var(--clr-greyish-blue);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.text-2 {
+    padding-right: 20%;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.75;
+}
+
+.item-2, .item-3 {
+    background: var(--clr-cyan);
+}
+
+.item-3 {
+    opacity: 0.8;
+    color: white;
+}
+
+.content {
+    /* border: 1px solid black; */
+    padding: .7rem 0;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+}
+
+.dollar {
+    font-size: 2em;
+    font-weight: 700;
+    margin-right: 0.8rem;
+}
+
+.middle-text {
+    margin-top: .5rem;
+    opacity: 0.8;
+}
+
+.month {
+    opacity: 0.6;
+}
+
+.btn {
+    height: 48px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 1.05rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: var(--clr-bright-yellow);
+    box-shadow: 10px 10px 20px rgba(0,0,0, .1);
+}
+
+@media (orientation: landscape) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .grid-container {
+        width: 45%;
+        min-height: 61%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 45% 55%;
+    }
+
+    .grid-item {
+        padding: 2.5rem;
+    }
+
+    .item-1 {
+        grid-column: 1 / -1;
+    }
+
+    .item-1 h4 {
+        font-size: 1.25rem;
+
+    }
+
+    .text-1 {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .dollar, .month {
+        margin-top: .5rem;
+    }
+
+    .header-blue {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 0;
+    }
+    .item-2, .item-3 {
+        padding-bottom: .6rem;
+    }
+    
+
+}
+
+
+
