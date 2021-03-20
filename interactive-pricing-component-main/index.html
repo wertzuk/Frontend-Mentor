@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+</head>
+<body>
+  <header class="header">
+    <h2>Simple, traffic-based pricing</h2>
+    <p class="text">
+      Sign-up for our 30-day trial. No credit card required. 
+    </p>
+  </header>
+  
+  <div class="main-container">
+    <div class="main-content">
+      <h3 class="pageviews">100K Pageviews</h3>
+      <input type="range" min="0" max="100" value="50" step="10" name="slider" id="slider" class="slider-bar">
+      <div class="price-container">
+        <span class="price">$16.00</span>
+        <span class="month">/month</span>
+      </div>
+      <div class="billing-container">
+        <span class="billing">Monthly Billing</span>
+        <label for="checkbox" class="switch">
+          <input type="checkbox" name="checkbox" id="checkbox">
+          <span class="cb-slider"></span>
+        </label>
+        <span class="billing">Yearly Billing</span>
+        <span class="percent">-25%</span>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="benefits-container">
+        <div class="rows">
+          <div class="row">
+            <img src="images/icon-check.svg" alt=""><span class="benefits">Unlimited websites</span>
+          </div>
+          <div class="row">
+            <img src="images/icon-check.svg" alt=""><span class="benefits">100% data ownership</span>
+          </div>
+          <div class="row">
+            <img src="images/icon-check.svg" alt=""><span class="benefits">Email reports</span>
+          </div>
+        </div>
+        
+        <button class="btn">Start my trial</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
