@@ -1,0 +1,399 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-gray: hsl(0, 0%, 55%);
+    --very-dark-gray: hsl(0, 0%, 41%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alata', sans-serif;
+    font-size: 15px;
+}
+
+.main-heading, h2, ul, .description {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+header {
+    background-image: url("images/mobile/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding-top: 2rem;
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+header.active {
+    background: black;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    align-self: center;
+}
+
+.hamburger, .close {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.nav-ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-ul {
+    position: absolute;
+    left: 1rem;
+    top: 15rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: none;
+}
+
+.nav-ul li{
+    padding: .4rem 0;
+    cursor: pointer;
+}
+
+.menu-ul li {
+    padding: 1rem 0;
+}
+
+.nav-ul a{
+    text-decoration: none;
+    color: white;
+}
+
+.desktop-image {
+    display: none;
+}
+
+.main-heading {
+    padding: 1.5rem;
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    word-spacing: 10000px;
+    margin: 12rem 2rem;
+    display: none;
+}
+
+/* main content styling */
+
+main {
+    margin: 6rem 1.5rem;
+    text-align: center;
+}
+
+main img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+}
+
+.section-heading {
+    font-size: 2.1rem;
+    font-weight: 400;
+    margin-top: 1.3em;
+}
+
+.text {
+    color: var(--dark-gray);
+    padding: 0 2em;
+    line-height: 1.7;
+}
+
+.creations {
+    margin-top: 7rem;
+}
+
+.img-container {
+    padding: 2.5rem 0;
+}
+
+.image {
+    position: relative;
+    margin: 1rem 0 0;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+.image:hover {
+    opacity: .3;
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,0)) !important;
+}
+
+.mobile-image {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.description {
+    position: absolute;
+    color: white;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    z-index: 100;
+    text-align: left;
+}
+
+.btn {
+    display: inline-block;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    border: 1px solid black;
+    background: white;
+    padding: .8em 2.4em;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.footer-ul {
+    flex-direction: column;
+    text-transform: capitalize;
+    margin: 1.5rem 0;
+}
+
+.footer-ul li {
+    margin: .2rem 0;
+}
+
+.icon-list img {
+    margin: 0 .4rem;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
+
+    header {
+        background-image:  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("images/desktop/image-hero.jpg");
+        background-size: contain;
+        max-height: 640px;
+        background-attachment: fixed;
+    }
+
+    nav {
+        justify-content: space-around;
+        margin: 2rem;
+    }
+
+    .hamburger {
+        display: none !important;
+    }
+
+    .nav-ul {
+        flex-direction: row;
+    }
+
+    .menu-ul {
+        display: flex;
+        position: static;
+        text-transform: capitalize;
+        justify-content: end;
+        font-weight: 600;
+        font-size: 14px;
+        
+    }
+
+    .menu-ul li {
+        margin: 0 1rem;
+    }
+    .menu-ul a {
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    .menu-ul a:after {
+        content: '';
+        bottom: 0;
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: none repeat scroll 0 0 transparent;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    a:hover:after { 
+        width: 100%; 
+        left: 0; 
+      }
+
+    .menu-ul li:hover {
+        /* border-bottom: .1px solid white; */
+    }
+
+    main {
+        margin: 5rem 10rem;
+        position: relative;
+    }
+
+    .featured {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-top: 3rem; 
+        margin-bottom: 10rem;
+    }
+
+
+
+    .featured img {
+        width: 60%;
+        min-width: 690px;
+        flex-grow: 1;
+    }
+
+    .text-content {
+
+        text-align: start;
+        padding-left: 6rem;
+        padding-right: 8%;
+        background: white;
+        margin-left: -10rem;
+    }
+
+    .text-content .text {
+        padding: 0;
+    } 
+
+    .section-heading {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .main-heading {
+        width: 600px;
+        word-spacing: normal;
+        font-size: 4.3rem;
+        padding: 2.5rem;
+        margin-top: 7rem;
+        margin-left: 10rem;
+        
+    }
+
+    .img-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+        grid-gap: 1.8rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .image {
+        margin: 0;
+    }
+
+
+    .mobile-image {
+        display: none;
+    }
+
+    .desktop-image {
+        display: block;
+    }
+
+    .btn {
+        position: absolute;
+        top: 680px; 
+        right: 0;
+        border: 2px solid hsl(0, 0%, 41%);
+    }
+
+    footer {
+        display: flex;
+        padding: 2rem 10rem 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-heading {
+        display: none;
+    }
+
+    .footer-bottom {
+        text-align: right;
+    }
+
+    .footer-ul {
+        margin-top: 1rem;
+    }
+
+    .footer-ul li {
+        margin-right: 1.5rem;
+        font-weight: 600;
+    }
+
+    footer .text {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 750px) {
+    header {
+        background-size: 1440px;
+    }
+}
+
+
+
+
+
+
+
