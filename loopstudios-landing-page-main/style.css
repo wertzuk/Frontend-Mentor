@@ -273,10 +273,6 @@ footer {
     a:hover:after { 
         width: 100%; 
         left: 0; 
-      }
-
-    .menu-ul li:hover {
-        /* border-bottom: .1px solid white; */
     }
 
     main {
@@ -291,8 +287,6 @@ footer {
         padding-top: 3rem; 
         margin-bottom: 10rem;
     }
-
-
 
     .featured img {
         width: 60%;
