@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <script src="script.js" defer></script>
+
+    <title>Frontend Mentor | [dashboard]</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h2>Social Media Dashboard</h2>
+        <p class="grey">Total Followers: 23,004</p>
+      </div>
+      <div class="darkmode">
+        <p class="grey">Dark Mode</p>
+        <label for="checkbox" class="switch">
+          <input type="checkbox" name="checkbox" id="checkbox" />
+          <span class="cb-slider"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <div class="user-container">
+        <div class="user-item user-item-1">
+          <div class="top-color fb"></div>
+          <div class="item-top">
+            <img src="images/icon-facebook.svg" alt="" />
+            <span class="name">@nathanf</span>
+          </div>
+          <h1 class="number">1987</h1>
+          <span class="followers">Followers</span>
+          <div class="item-bottom">
+            <img src="images/icon-up.svg" alt="" />
+            <span class="today">12 Today</span>
+          </div>
+        </div>
+
+        <div class="user-item user-item-2">
+          <div class="top-color tw"></div>
+          <div class="item-top">
+            <img src="images/icon-twitter.svg" alt="" />
+            <span class="name">@nathanf</span>
+          </div>
+          <h1 class="number">1044</h1>
+          <span class="followers">Followers</span>
+          <div class="item-bottom">
+            <img src="images/icon-up.svg" alt="" />
+            <span class="today">99 Today</span>
+          </div>
+        </div>
+
+        <div class="user-item user-item-3">
+          <div class="top-color in"></div>
+          <div class="item-top">
+            <img src="images/icon-instagram.svg" alt="" />
+            <span class="name">@realnathanf</span>
+          </div>
+          <h1 class="number">11k</h1>
+          <span class="followers">Followers</span>
+          <div class="item-bottom">
+            <img src="images/icon-up.svg" alt="" />
+            <span class="today">1099 Today</span>
+          </div>
+        </div>
+
+        <div class="user-item user-item-4">
+          <div class="top-color yo"></div>
+          <div class="item-top">
+            <img src="images/icon-youtube.svg" alt="" />
+            <span class="name">@Nathan F.</span>
+          </div>
+          <h1 class="number">8239</h1>
+          <span class="followers">Followers</span>
+          <div class="item-bottom">
+            <img src="images/icon-down.svg" alt="" />
+            <span class="today">144 Today</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview-container">
+        <h2>Overview - Today</h2>
+        <div class="overview-item-container">
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Page Views</span>
+              <img src="images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">87</span>
+              <div class="diff">
+                <img src="images/icon-up.svg" alt="" />
+                <span class="percent">3%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Likes</span>
+              <img src="images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">52</span>
+              <div class="diff">
+                <img src="images/icon-down.svg" alt="" />
+                <span class="percent red">2%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Likes</span>
+              <img src="images/icon-instagram.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">5462</span>
+              <div class="diff">
+                <img src="images/icon-up.svg" alt="" />
+                <span class="percent">2257%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Profile Views</span>
+              <img src="images/icon-instagram.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">52k</span>
+              <div class="diff">
+                <img src="images/icon-up.svg" alt="" />
+                <span class="percent">1375%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Retweets</span>
+              <img src="images/icon-twitter.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">117</span>
+              <div class="diff">
+                <img src="images/icon-up.svg" alt="" />
+                <span class="percent">303%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Likes</span>
+              <img src="images/icon-twitter.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">507</span>
+              <div class="diff">
+                <img src="images/icon-up.svg" alt="" />
+                <span class="percent">553%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Likes</span>
+              <img src="images/icon-youtube.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">107</span>
+              <div class="diff">
+                <img src="images/icon-down.svg" alt="" />
+                <span class="percent red">19%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-item">
+            <div class="overview-heading">
+              <span class="stat">Total Views</span>
+              <img src="images/icon-youtube.svg" alt="" />
+            </div>
+            <div class="overview-counting">
+              <span class="count-number">1407</span>
+              <div class="diff">
+                <img src="images/icon-down.svg" alt="" />
+                <span class="percent red">12%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
