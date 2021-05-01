@@ -1,0 +1,313 @@
+@import "abstracts";
+@import "utils";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+
+body {
+  font-family: "Karla", sans-serif;
+  text-align: center;
+}
+
+.active {
+  display: block !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem;
+  }
+  .menu-container {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 80px;
+    left: 0;
+    background: $vdark-violet;
+    background-image: url("../images/bg-pattern-mobile-nav.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: opacity 0.3s;
+    li:not(li:last-child) {
+      color: $vdark-light-gray;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+    }
+    .btn {
+      margin-top: 2rem;
+      padding: 0.7em 5em;
+      font-size: 1.3rem;
+    }
+  }
+
+  .hamburger,
+  .close {
+    display: none;
+  }
+
+  .header-content {
+    position: relative;
+    background-color: $dark-violet;
+    &-main {
+      padding: 5.5rem 1.5rem;
+      background-image: url("../images/bg-pattern-intro-left-mobile.svg");
+
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-attachment: local;
+    }
+    .desktop-img-left,
+    .desktop-img-right {
+      display: none;
+    }
+  }
+
+  .header-img {
+    display: inline-block;
+    width: 100vw;
+    content: "";
+    img {
+      width: 100%;
+    }
+  }
+
+  .header-bottom-img {
+    display: block;
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+//
+// Main Secion Styling
+//
+
+main {
+  margin: 10rem 1.5rem 0;
+  .large-heading {
+    position: relative;
+  }
+  .main-heading::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: $dark-gr-violet;
+    top: -2rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .properties-container {
+    margin: 4rem 0 6rem;
+    img {
+      margin: 2rem 0 3rem;
+    }
+    h3 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .bottom-container {
+    background-color: $dark-violet;
+    padding: 5rem 0.3rem;
+    position: relative;
+    background-image: url("../images/bg-pattern-how-we-work-mobile.svg") !important;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-attachment: local;
+    .btn {
+      margin-top: 2rem;
+    }
+  }
+}
+
+footer {
+  position: relative;
+  margin-top: 8rem;
+  .footer-top {
+    padding-top: 4rem;
+    background-image: url("../images/bg-pattern-footer-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .icons {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($dark-gr-violet, 0.3);
+    width: 90%;
+    margin: 2rem auto 0;
+    padding: 2.5rem 0;
+  }
+  .list-heading {
+    margin-bottom: 2rem;
+  }
+  ul {
+    margin-bottom: 2rem;
+  }
+  li {
+    font-weight: 700;
+  }
+
+  ul > * + * {
+    margin-top: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    text-align: left;
+  }
+  header {
+    .nav-toggle {
+      display: none;
+    }
+    nav {
+      padding: 1rem 10%;
+    }
+    .menu-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      gap: 1rem;
+      position: static;
+      background: white;
+
+      li {
+        color: $dark-gr-violet !important;
+        margin: 0 0.5rem !important;
+        font-size: 14px !important;
+        font-weight: 600;
+      }
+      .btn {
+        border: 2px solid black;
+        color: black;
+        width: 130px;
+        font-size: 14px;
+        padding: 0.6em 1.5em;
+        margin: 0;
+        font-weight: 600;
+        &:hover {
+          background: $dark-violet;
+          color: white;
+        }
+      }
+    }
+    .header-content {
+      display: flex;
+      flex-direction: row-reverse;
+      background-image: none;
+      position: relative;
+      padding: 0 10%;
+      &-main {
+        min-width: 50%;
+        flex: 1;
+        margin: auto 0;
+        background-image: none;
+      }
+    }
+
+    .header-img {
+      padding-top: 10rem;
+
+      width: 45%;
+      min-width: 300px;
+      content: url("../images/image-intro-desktop.jpg");
+      margin-bottom: -8rem;
+
+      object-fit: contain;
+    }
+  }
+  main {
+    padding: 10rem 10% 0;
+    margin-left: 0;
+    margin-right: 0;
+    .properties-container {
+      display: flex;
+      gap: 3.5rem;
+    }
+
+    .bottom-container {
+      padding: 4rem 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-image: url("../images/bg-pattern-how-we-work-desktop.svg") !important;
+      right: 0;
+      background-size: contain;
+    }
+    .btn {
+      align-self: center;
+    }
+  }
+
+  .main-heading::before {
+    left: 0 !important;
+    margin: 0 !important;
+    width: 10% !important;
+  }
+
+  footer {
+    .footer-top,
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-top {
+      padding-left: 10%;
+      padding-right: 10%;
+      background-image: none;
+    }
+
+    .footer-bottom {
+      width: 80%;
+      padding-right: 15%;
+    }
+  }
+
+  .header-bottom-img {
+    display: none !important;
+  }
+  .desktop-img-left,
+  .desktop-img-right,
+  .footer-img {
+    display: block !important;
+    position: absolute !important;
+    pointer-events: none;
+  }
+
+  .desktop-img-right {
+    top: 0;
+    right: 0;
+  }
+
+  .desktop-img-left {
+    left: 0;
+    bottom: -20rem;
+  }
+
+  .footer-img {
+    top: 0;
+  }
+}

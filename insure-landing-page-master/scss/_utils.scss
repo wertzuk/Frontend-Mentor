@@ -1,0 +1,125 @@
+$dark-violet: hsl(256, 26%, 20%);
+$grayish-blue: hsl(216, 30%, 68%);
+$vdark-violet: hsl(270, 9%, 17%);
+$dark-gr-violet: hsl(273, 4%, 51%);
+$vdark-light-gray: hsl(0, 0%, 98%);
+
+.large-heading,
+h3,
+.big-heading {
+  font-family: "DM Serif Display", serif;
+  padding: 0 1rem;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.large-heading {
+  font-size: 3rem;
+}
+
+.heading-light,
+.text-light {
+  color: $vdark-light-gray;
+}
+
+.text-content {
+  line-height: 1.7;
+  &-gray {
+    color: $dark-gr-violet;
+  }
+}
+
+.btn {
+  background: transparent;
+  text-transform: uppercase;
+  padding: 0.8em 2.4em;
+  &-light-border {
+    border: 2px solid white;
+    color: white;
+  }
+}
+
+.big-heading {
+  font-size: 2.7rem;
+}
+
+.list-heading {
+  color: $dark-gr-violet;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 1.4px;
+  font-size: 14px;
+}
+
+footer {
+  background: $vdark-light-gray;
+  li {
+    color: $vdark-violet;
+    word-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+}
+
+.desktop-img-left,
+.desktop-img-right,
+.footer-img {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .large-heading,
+  h3,
+  .big-heading {
+    padding: 0;
+  }
+
+  .large-heading {
+    position: relative;
+    font-size: 4rem;
+  }
+
+  .big-heading {
+    font-size: 3.5rem;
+    width: 60%;
+  }
+
+  .large-heading::before {
+    //   .main-heading::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 30%;
+    background: white;
+    top: -4rem;
+    left: 0;
+  }
+}
+
+//--------------------
+// Hover-Effekte
+//--------------------
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+footer {
+  .icons {
+    svg {
+      cursor: pointer;
+
+      &:hover {
+        path {
+          fill: black;
+        }
+      }
+    }
+  }
+
+  li:hover {
+    text-decoration: underline;
+  }
+}
