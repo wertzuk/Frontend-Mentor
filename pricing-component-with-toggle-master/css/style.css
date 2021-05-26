@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+
+footer {
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background: url("../images/bg-top.svg") no-repeat top right, #f6f6fe;
+}
+
+.pricing-container {
+  padding: 4rem 0;
+}
+
+.pricing-container h1 {
+  color: #6d708d;
+}
+
+.toggle-container {
+  margin-top: 3rem;
+  color: #b3b5c6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  border-radius: 30px;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .slider {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  right: 5px;
+  margin: auto 0;
+  border-radius: 50%;
+  background: white;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.toggle input:checked + .slider {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.main-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+.light-bg {
+  background: white;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #6d708d;
+}
+
+.blue-bg {
+  background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background: linear-gradient(to right, #a3a8f0, #696fdd);
+  color: white;
+}
+
+.blue-bg .list-item {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.blue-bg .list-item:last-of-type {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.white {
+  color: white !important;
+}
+
+.main-container-item {
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.text {
+  font-size: 1.1rem;
+}
+
+.pricing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.8rem;
+  color: #494c5f;
+}
+
+.pricing .dollar {
+  font-size: 2.4rem;
+}
+
+.pricing .price {
+  font-size: 4.3rem;
+}
+
+.list-item {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(109, 112, 141, 0.2);
+}
+
+.list-item:last-of-type {
+  border-bottom: 1px solid rgba(109, 112, 141, 0.2);
+}
+
+.btn {
+  margin-top: 2rem;
+  width: 98%;
+  border-radius: 5px;
+  padding: 1em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.btn-blue {
+  color: #696fdd;
+}
+
+@media only screen and (min-width: 700px) {
+  .main-container {
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .light-bg {
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+  .main-container-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .special {
+    padding-top: 4.5rem;
+    padding-bottom: 4rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
