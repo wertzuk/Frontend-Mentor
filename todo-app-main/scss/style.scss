@@ -1,0 +1,165 @@
+@import "abstracts";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+$bright-blue: hsl(220, 98%, 61%);
+$check-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+$very-dk-blue: hsl(235, 21%, 11%);
+$very-dk-des-blue: hsl(235, 24%, 19%);
+$lt-grayish-blue: hsl(234, 39%, 85%);
+$lt-grayish-blue-hover: hsl(236, 33%, 92%); // hover
+$dk-grayish-blue: hsl(234, 11%, 52%);
+$very-dk-grayish-blue: hsl(233, 14%, 35%);
+$very-dk-grayish-blue: hsl(237, 14%, 26%);
+
+$very-lt-gray: hsl(0, 0%, 98%);
+$very-lt-grayish-blue: hsl(236, 33%, 92%);
+$lt-grayish-blue: hsl(233, 11%, 84%);
+$dk-grayish-blue: hsl(236, 9%, 61%);
+$very-dk-grayish-blue: hsl(235, 19%, 35%);
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+header {
+  height: 25vh;
+  background: url("../images/bg-mobile-dark.jpg") no-repeat center center /
+    cover;
+  h3 {
+    letter-spacing: 7px;
+    font-size: 1.6rem;
+    padding: 2.5rem 1.5rem;
+    color: $very-lt-gray;
+  }
+}
+main {
+  min-height: 75vh;
+  background: $very-dk-blue;
+  font-size: 12px;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  .todo-container {
+    width: 90%;
+    inset: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 15vh;
+  }
+
+  .todo-item {
+    background: $very-dk-des-blue;
+    padding: 1rem 1.5rem;
+    color: $lt-grayish-blue;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 55px;
+  }
+
+  .new-todo {
+    padding-block: 0;
+    margin-bottom: 1rem;
+
+    .new-item {
+      outline: none;
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding-block: 1rem;
+      font-size: 12px;
+      font-family: inherit;
+      background: transparent;
+      color: $very-lt-gray;
+    }
+  }
+
+  .todos {
+    overflow: hidden;
+    margin-bottom: 1rem;
+    & > * + * {
+      border-top: 1px solid rgba(white, 0.2);
+    }
+  }
+  .new-todo,
+  .todos,
+  .todo-watcher {
+    border-radius: 5px;
+  }
+
+  .circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(white, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    &:hover {
+      border-color: hsl(192, 100%, 67%);
+    }
+    .fill {
+      position: absolute;
+      inset: 0;
+    }
+    input:checked + .fill {
+      background: url("../images/icon-check.svg") no-repeat center, $check-bg;
+    }
+  }
+
+  .circle-btn {
+    display: inline-block;
+    width: 22px;
+  }
+
+  img {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .todo-text {
+    margin: 0;
+  }
+
+  .todo-text.complete {
+    text-decoration: line-through;
+    color: $dk-grayish-blue;
+  }
+
+  .last {
+    color: $dk-grayish-blue;
+    justify-content: space-between;
+    .completed {
+      cursor: pointer;
+    }
+  }
+
+  .todo-watcher {
+    justify-content: center;
+    font-size: 14px;
+    color: $dk-grayish-blue;
+    & > * {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    & > *.active {
+      color: $bright-blue;
+    }
+  }
+}
+
+body.light {
+  header {
+    background: $check-bg;
+    color: $very-dk-grayish-blue;
+  }
+}

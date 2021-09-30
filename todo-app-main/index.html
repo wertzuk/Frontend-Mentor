@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js" defer></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <header>
+      <h3>TODO</h3>
+    </header>
+    <main>
+      <div id="app">
+        <div class="todo-container">
+          <div class="todo-item new-todo">
+            <div class="circle"  @click="addNewItem" @keyup.enter="addNewItem"></div>
+            <input type="text" id="newTodo" class="new-item" placeholder="Create new todo..." v-model="newTodo"/>
+          </div>
+          
+          <div class="todos" v-if="todos.length > 0">
+            <div class="todo-item" v-for="(todo, index) in todos" :key="todo">
+                <label :for=`checkbox${index}` class="circle">
+                  <input type="checkbox" 
+                    :value="todo" 
+                    :name=`checkbox${index}` 
+                    :id=`checkbox${index}` 
+                    v-model="checked" />
+                  <div class="fill"></div>
+                </label>
+                <p class="todo-text" :class="{ complete: checked.includes(todo) }">{{ todo }}</p>
+              
+              <img src="images/icon-cross.svg" alt="" @click="deleteItem(index)">
+            </div>
+
+            <div class="todo-item last">
+              <span class="left">{{ todos.length }} items left</span>
+              <span class="completed" @click="deleteAllCompleted">Clear Completed</span>
+            </div>
+          </div>
+          <div class="todo-item todo-watcher">
+            <span class="active">All</span>
+           <span>Active</span>
+           <span>Completed</span>
+          <div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

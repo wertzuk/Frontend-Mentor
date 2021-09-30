@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+
+footer {
+  margin: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+header {
+  height: 25vh;
+  background: url("../images/bg-mobile-dark.jpg") no-repeat center center/cover;
+}
+
+header h3 {
+  letter-spacing: 7px;
+  font-size: 1.6rem;
+  padding: 2.5rem 1.5rem;
+  color: #fafafa;
+}
+
+main {
+  min-height: 75vh;
+  background: #161722;
+  font-size: 12px;
+}
+
+main input[type="checkbox"] {
+  display: none;
+}
+
+main .todo-container {
+  width: 90%;
+  inset: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 15vh;
+}
+
+main .todo-item {
+  background: #25273c;
+  padding: 1rem 1.5rem;
+  color: #d2d3db;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  min-height: 55px;
+}
+
+main .new-todo {
+  padding-block: 0;
+  margin-bottom: 1rem;
+}
+
+main .new-todo .new-item {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding-block: 1rem;
+  font-size: 12px;
+  font-family: inherit;
+  background: transparent;
+  color: #fafafa;
+}
+
+main .todos {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+main .todos > * + * {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+main .new-todo,
+main .todos,
+main .todo-watcher {
+  border-radius: 5px;
+}
+
+main .circle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+main .circle:hover {
+  border-color: #57ddff;
+}
+
+main .circle .fill {
+  position: absolute;
+  inset: 0;
+}
+
+main .circle input:checked + .fill {
+  background: url("../images/icon-check.svg") no-repeat center, -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: url("../images/icon-check.svg") no-repeat center, linear-gradient(#57ddff, #c058f3);
+}
+
+main .circle-btn {
+  display: inline-block;
+  width: 22px;
+}
+
+main img {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+main .todo-text {
+  margin: 0;
+}
+
+main .todo-text.complete {
+  text-decoration: line-through;
+  color: #9394a5;
+}
+
+main .last {
+  color: #9394a5;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .last .completed {
+  cursor: pointer;
+}
+
+main .todo-watcher {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 14px;
+  color: #9394a5;
+}
+
+main .todo-watcher > * {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+main .todo-watcher > *.active {
+  color: #3a7bfd;
+}
+
+body.light header {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+  color: #484b6a;
+}
+/*# sourceMappingURL=style.css.map */
