@@ -61,7 +61,11 @@
                   />
                   <div class="fill"></div>
                 </label>
-                <p class="todo-text" :class="{ complete: todo.checked }">
+                <p
+                  class="todo-text"
+                  :class="{ complete: todo.checked }"
+                  @click="todo.checked = !todo.checked"
+                >
                   {{ todo.todo }}
                 </p>
 

@@ -34,7 +34,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto;
   }
   h3 {
@@ -64,7 +64,7 @@ main {
     position: absolute;
     inset: 0;
     width: 90%;
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto;
     top: 15vh;
   }
@@ -146,6 +146,7 @@ main {
 
   .todo-text {
     margin: 0;
+    cursor: pointer;
   }
 
   .todo-text.complete {
@@ -200,6 +201,8 @@ body.light {
     .todo-text.complete {
       color: $lt-grayish-blue-1;
     }
+    .todo-text:hover {
+    }
 
     .last,
     .todo-watcher {
@@ -231,13 +234,15 @@ body.light {
   main {
     font-size: 14px;
     .todo-container {
-      top: 200px;
+      top: 180px;
     }
-    .todo-item,
     .new-todo {
       .new-item {
         font-size: 14px;
       }
+    }
+    .todo-item {
+      padding-block: 1rem;
     }
   }
 
