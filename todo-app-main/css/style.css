@@ -62,22 +62,47 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   color: white;
+  overflow: hidden;
 }
 
 header {
-  height: 25vh;
+  height: 150px;
+  padding: 2rem 5% 2rem;
   background: url("../images/bg-mobile-dark.jpg") no-repeat center center/cover;
+}
+
+header .header-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 header h3 {
   letter-spacing: 7px;
   font-size: 1.6rem;
-  padding: 2.5rem 1.5rem;
   color: #fafafa;
 }
 
+header .icon-moon,
+header .icon-sun {
+  display: none;
+  cursor: pointer;
+}
+
+header .show {
+  display: block;
+}
+
 main {
-  min-height: 75vh;
+  height: 100vh;
   background: #161722;
   font-size: 12px;
 }
@@ -87,25 +112,26 @@ main input[type="checkbox"] {
 }
 
 main .todo-container {
-  width: 90%;
-  inset: 0;
-  margin: 0 auto;
   position: absolute;
+  inset: 0;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
   top: 15vh;
 }
 
 main .todo-item {
-  background: #25273c;
-  padding: 1rem 1.5rem;
-  color: #d2d3db;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #25273c;
+  padding: 0.8em 1.5em;
+  color: #cacde8;
   gap: 1rem;
-  min-height: 55px;
+  min-height: 50px;
 }
 
 main .new-todo {
@@ -118,7 +144,7 @@ main .new-todo .new-item {
   border: none;
   width: 100%;
   height: 100%;
-  padding-block: 1rem;
+  padding-block: 0.4rem;
   font-size: 12px;
   font-family: inherit;
   background: transparent;
@@ -131,7 +157,7 @@ main .todos {
 }
 
 main .todos > * + * {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 main .new-todo,
@@ -193,11 +219,11 @@ main .todo-text {
 
 main .todo-text.complete {
   text-decoration: line-through;
-  color: #9394a5;
+  color: #777a92;
 }
 
 main .last {
-  color: #9394a5;
+  color: #777a92;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -212,21 +238,84 @@ main .todo-watcher {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 14px;
-  color: #9394a5;
+  color: #777a92;
 }
 
 main .todo-watcher > * {
   cursor: pointer;
   font-weight: 700;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-main .todo-watcher > *.active {
+main .todo-watcher > *:hover {
+  color: #e4e5f1;
+}
+
+main .todo-watcher > *.selected {
   color: #3a7bfd;
 }
 
 body.light header {
-  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
-  background: linear-gradient(#57ddff, #c058f3);
+  background-image: url(../images/bg-mobile-light.jpg);
+  color: #393a4c;
+}
+
+body.light main {
+  background: #e4e5f1;
+}
+
+body.light main .todo-item {
+  background: #fafafa;
+}
+
+body.light main .new-item,
+body.light main .todo-text {
   color: #484b6a;
+}
+
+body.light main .circle {
+  border-color: rgba(147, 148, 165, 0.2);
+}
+
+body.light main .todo-text.complete {
+  color: #d2d3db;
+}
+
+body.light main .last,
+body.light main .todo-watcher {
+  color: #9394a5;
+}
+
+body.light main .todos > * + * {
+  border-top: 1px solid rgba(72, 75, 106, 0.2);
+}
+
+body.light main .todo-watcher span:hover {
+  color: #484b6a;
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    height: 280px;
+    background-image: url(../images/bg-desktop-dark.jpg);
+  }
+  header h3 {
+    padding: 3rem 0;
+    font-size: 2.2rem;
+  }
+  main {
+    font-size: 14px;
+  }
+  main .todo-container {
+    top: 200px;
+  }
+  main .todo-item .new-item,
+  main .new-todo .new-item {
+    font-size: 14px;
+  }
+  body.light header {
+    background-image: url(../images/bg-desktop-light.jpg);
+  }
 }
 /*# sourceMappingURL=style.css.map */

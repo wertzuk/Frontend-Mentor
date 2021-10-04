@@ -18,41 +18,86 @@
   </head>
   <body>
     <header>
-      <h3>TODO</h3>
+      <div class="header-items">
+        <h3>TODO</h3>
+        <div class="icons">
+          <img src="images/icon-moon.svg" alt="moon" class="icon-moon" />
+          <img src="images/icon-sun.svg" alt="sun" class="icon-sun show" />
+        </div>
+      </div>
     </header>
     <main>
       <div id="app">
         <div class="todo-container">
           <div class="todo-item new-todo">
-            <div class="circle"  @click="addNewItem" @keyup.enter="addNewItem"></div>
-            <input type="text" id="newTodo" class="new-item" placeholder="Create new todo..." v-model="newTodo"/>
+            <div
+              class="circle"
+              @click="addNewItem"
+              @keyup.enter="addNewItem"
+            ></div>
+            <input
+              type="text"
+              id="newTodo"
+              class="new-item"
+              placeholder="Create new todo..."
+              v-model="newTodo"
+            />
           </div>
-          
-          <div class="todos" v-if="todos.length > 0">
-            <div class="todo-item" v-for="(todo, index) in todos" :key="todo">
-                <label :for=`checkbox${index}` class="circle">
-                  <input type="checkbox" 
-                    :value="todo" 
-                    :name=`checkbox${index}` 
-                    :id=`checkbox${index}` 
-                    v-model="checked" />
+
+          <div class="wrapper" v-if="todos.length > 0">
+            <div class="todos">
+              <div
+                v-for="(todo, index) in filteredTodos"
+                :key="index"
+                class="todo-item"
+              >
+                <label :for="`checkbox${index}`" class="circle">
+                  <input
+                    type="checkbox"
+                    :value="todo.todo"
+                    :name="`checkbox${index}`"
+                    :id="`checkbox${index}`"
+                    v-model="todo.checked"
+                  />
                   <div class="fill"></div>
                 </label>
-                <p class="todo-text" :class="{ complete: checked.includes(todo) }">{{ todo }}</p>
-              
-              <img src="images/icon-cross.svg" alt="" @click="deleteItem(index)">
-            </div>
+                <p class="todo-text" :class="{ complete: todo.checked }">
+                  {{ todo.todo }}
+                </p>
 
-            <div class="todo-item last">
-              <span class="left">{{ todos.length }} items left</span>
-              <span class="completed" @click="deleteAllCompleted">Clear Completed</span>
+                <img
+                  src="images/icon-cross.svg"
+                  alt=""
+                  @click="deleteItem(todo.todo)"
+                />
+              </div>
+
+              <div class="todo-item last">
+                <span class="left">{{ todos.length }} items left</span>
+                <span class="completed" @click="deleteAllCompleted"
+                  >Clear Completed</span
+                >
+              </div>
             </div>
           </div>
           <div class="todo-item todo-watcher">
-            <span class="active">All</span>
-           <span>Active</span>
-           <span>Completed</span>
-          <div>
+            <span
+              class="active"
+              :class="{ selected: filter === 'all' }"
+              @click="filter = 'all'"
+              >All</span
+            >
+            <span
+              @click="filter = 'active'"
+              :class="{ selected: filter === 'active' }"
+              >Active</span
+            >
+            <span
+              @click="filter = 'completed'"
+              :class="{ selected: filter === 'completed' }"
+              >Completed</span
+            >
+          </div>
         </div>
       </div>
     </main>

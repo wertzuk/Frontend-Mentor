@@ -4,43 +4,38 @@ const app = new Vue({
     return {
       newTodo: null,
       todos: [],
-      checked: [],
+      filter: "all",
+      darkTheme: true,
     };
   },
   methods: {
     addNewItem() {
-      if (this.newTodo && !this.todos.includes(this.newTodo)) {
-        this.todos.push(this.newTodo);
+      if (this.newTodo && !this.isKeyPresent(this.newTodo)) {
+        const obj = new Object();
+        obj.todo = this.newTodo;
+        obj.checked = false;
+        this.todos.push(obj);
         this.newTodo = null;
       }
     },
-    deleteItem(index) {
-      const item = this.todos[index];
-      if (this.checked.includes(item)) {
-        const checkedIndex = this.checked.indexOf(item);
-        this.checked.splice(checkedIndex, 1);
-      }
-      this.todos.splice(index, 1);
+    deleteItem(todoToDelete) {
+      this.todos = this.todos.filter((todo) => todo.todo !== todoToDelete);
     },
-    getAllActive() {
-      return this.todos.filter((todo) => !this.checked.includes(todo));
-    },
-    getAllCompleted() {
-      return this.todos.filter((todo) => this.checked.includes(todo));
-    },
-
     deleteAllCompleted() {
-      this.todos = this.getAllActive();
-      this.checked.clear();
+      this.todos = this.todos.filter((todo) => !todo.checked);
     },
-    showActive() {
-      this.todos = this.getAllActive();
+    isKeyPresent(todo) {
+      return this.todos.find((value) => value.todo === todo);
     },
-    showCompleted() {
-      this.todos = this.getAllCompleted();
-    },
-    showAll() {
-      this.todos = this.getAllActive.concat(this.getAllCompleted);
+  },
+
+  computed: {
+    filteredTodos() {
+      if (this.filter === "active") {
+        return this.todos.filter((todo) => !todo.checked);
+      } else if (this.filter === "completed") {
+        return this.todos.filter((todo) => todo.checked);
+      } else return this.todos;
     },
   },
 
@@ -51,4 +46,19 @@ const app = new Vue({
       }
     });
   },
+});
+
+const sun = document.querySelector(".icon-sun");
+const moon = document.querySelector(".icon-moon");
+
+moon.addEventListener("click", () => {
+  sun.classList.add("show");
+  moon.classList.remove("show");
+  document.body.classList.remove("light");
+});
+
+sun.addEventListener("click", () => {
+  moon.classList.add("show");
+  sun.classList.remove("show");
+  document.body.classList.add("light");
 });
