@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body class="dark">
+    <header>
+      <h2>Where in the world?</h2>
+      <span>Dark mode</span>
+    </header>
+
+    <main>
+      <div id="app">
+        <section class="top-section" v-if="!detailActive">
+          <input
+            type="text"
+            placeholder="Search for a country..."
+            v-model="searchTerm"
+            @keyUp="getDetails"
+          />
+          {{updatedData}}
+
+          <div class="select-wrapper">
+            <select name="select" id="select">
+              <option disabled hidden selected value>Filter by Region</option>
+              <option value="America">America</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
+          <i class="fas fa-search icon"></i>
+        </section>
+        <section
+          class="country-section"
+          v-if="countries.length > 0 && !detailActive"
+        >
+          <div v-for="country in countries" :key="country.name" class="card">
+            <div class="flag">
+              <img :src="country.flags.svg" alt="flag" />
+            </div>
+            <div class="info">
+              <h3 class="info__header">{{country.name}}</h3>
+              <div class="info__row">
+                <span class="type"> Population: </span>
+                <span class="value"> {{country.population}} </span>
+              </div>
+              <div class="info__row">
+                <span class="type"> Region: </span>
+                <span class="value"> {{country.region}} </span>
+              </div>
+              <div class="info__row">
+                <span class="type"> Capital: </span>
+                <span class="value">{{country.capital}} </span>
+              </div>
+              <div class="info__row"></div>
+              <div class="info__row"></div>
+            </div>
+          </div>
+        </section>
+        <section class="detail-page" v-if="detailActive">
+          <button class="btn">Back</button>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
